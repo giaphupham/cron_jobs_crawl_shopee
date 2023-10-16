@@ -2,6 +2,9 @@ import time
 import pandas as pd
 import json
 from urllib.request import urlopen 
+from datetime import datetime
+now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+
 
 def get_shop_info(url):
     url = url.strip()
@@ -35,4 +38,4 @@ for shop_url in df_shop["shop_url"]:
 
 df_shop_info = pd.DataFrame.from_dict(shops_info)
 
-df_shop_info.to_csv("shop_info.csv", mode = 'a', index = False, header = False)
+df_shop_info.to_csv(f"/data/shop_info_{now}.csv", mode = 'a', index = False, header = False)
