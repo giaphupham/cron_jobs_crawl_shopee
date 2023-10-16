@@ -18,7 +18,7 @@ jobs:
       - name: Run craw code
         run:
           python get_shop_info.py
-          git config user.name giaphupham
+          git config user.name Phạm Trần Gia Phú
           git config user.email giaphupham196@gmail.com
           git add .
           git commit -m "crongenerated"
