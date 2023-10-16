@@ -38,4 +38,4 @@ for shop_url in df_shop["shop_url"]:
 
 df_shop_info = pd.DataFrame.from_dict(shops_info)
 
-df_shop_info.to_csv(f"./data/shop_info_{now}.csv", mode = 'a', index = False, header = False)
+df_shop_info.to_csv(f"shop_info_{now}.csv", mode = 'a', index = False, header = False)
