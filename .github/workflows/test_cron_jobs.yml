@@ -1,6 +1,6 @@
 name: daily-crawl
 
-# on:
+on:
 #   schedule:
 #      - cron: '*/20 * * * *'
 
