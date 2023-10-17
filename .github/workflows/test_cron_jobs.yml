@@ -1,8 +1,8 @@
 name: daily-crawl
 
-on:
-  schedule:
-     - cron: '*/20 * * * *'
+# on:
+#   schedule:
+#      - cron: '*/20 * * * *'
 
 jobs:
   build:
