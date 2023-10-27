@@ -9,7 +9,7 @@ def get_flash_sale(url):
     api_url = f'https://shopee.vn/api/v4/shop/get_shop_detail?username={shop_name}'
     response = urlopen(api_url) 
     data_json = json.loads(response.read()) 
-
+    print(data_json)
     has_flash_sale = data_json["data"]["has_flash_sale"]
     flash_sale_list = []
     if has_flash_sale == False:
