@@ -41,6 +41,6 @@ for shop_id in df_shop["id"]:
 
 df_shop_info = pd.DataFrame.from_dict(shops_info)
 
-df_shop_info.to_csv(f"/data/shop_info_{time.time()}.csv", mode = 'a', index = False, header = False)
+df_shop_info.to_csv(f"./data/shop_info_{time.time()}.csv", mode = 'a', index = False, header = False)
 result = supabase.table("CT_shop").insert(shops_info).execute()
 

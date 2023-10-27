@@ -66,6 +66,6 @@ try:
     df_products = df_products.drop(columns = ["name", "brand", "shop_location"])
 except:
     pass
-df_products.to_csv(f'/data/product_info_{time.time()}.csv', mode='a', index=False, header = False)
+df_products.to_csv(f'./data/product_info_{time.time()}.csv', mode='a', index=False, header = False)
 data = df_products.to_dict(orient="records")
 result = supabase.table("CT_sanpham").insert(data).execute()
