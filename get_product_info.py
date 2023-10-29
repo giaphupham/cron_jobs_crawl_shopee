@@ -66,6 +66,8 @@ try:
     df_products = df_products.drop(columns = ["name", "brand", "shop_location"])
 except:
     pass
-df_products.to_csv(f'./data/product_info_{time.time()}.csv', mode='a', index=False, header = False)
+named_tuple = time.localtime() # lấy struct_time
+time_string = time.strftime("%m_%d_%Y", named_tuple)
+df_products.to_csv(f'./data/product_info_{time_string}.csv', mode='a', index=False, header = False)
 data = df_products.to_dict(orient="records")
 result = supabase.table("CT_sanpham").insert(data).execute()
