@@ -60,8 +60,6 @@ detail_df_new = pd.concat([detail_df, df_new_product])
 detail_df_new.to_csv('product_detail.csv', index=False)
 if not df_new_product.empty:
     detail_df_new.to_csv('product_detail.csv', index=False)
-    data = df_new_product.to_dict(orient="records")
-    result = supabase.table("sanpham").upsert(data).execute()
 try:
     df_products = df_products.drop(columns = ["name", "brand", "shop_location"])
 except:
@@ -69,5 +67,3 @@ except:
 named_tuple = time.localtime() # lấy struct_time
 time_string = time.strftime("%m_%d_%Y", named_tuple)
 df_products.to_csv(f'./data/product_info_{time_string}.csv', mode='a', index=False, header = False)
-data = df_products.to_dict(orient="records")
-result = supabase.table("CT_sanpham").insert(data).execute()

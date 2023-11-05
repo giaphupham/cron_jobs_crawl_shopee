@@ -44,5 +44,4 @@ df_shop_info = pd.DataFrame.from_dict(shops_info)
 named_tuple = time.localtime() # lấy struct_time
 time_string = time.strftime("%m_%d_%Y", named_tuple)
 df_shop_info.to_csv(f"./data/shop_info_{time_string}.csv", mode = 'a', index = False, header = False)
-result = supabase.table("CT_shop").insert(shops_info).execute()
 
